@@ -9,8 +9,7 @@ async function fetchUserGithubActivity(userName){
         //console.log(response)
         if(!response.ok){
             throw new Error(`Status: ${response.status}`);
-        }
-        
+        }  
         const userInfo = await response.json();
 
         //displayUserActivity(userInfo);
@@ -34,9 +33,9 @@ async function fetchUserRepos(userName) {
     }
 }
 
-function displayUserActivity(events){
+function displayUserActivity(userRepos){
     //console.log(userRepos)
-    events.forEach(event=>{
+    userRepos.forEach(event=>{
         console.log(event.full_name.split('/')[1]);
     });
     
