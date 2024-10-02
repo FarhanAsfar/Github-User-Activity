@@ -37,7 +37,7 @@ async function fetchUserRepos(userName) {
 function displayUserActivity(events){
     //console.log(userRepos)
     events.forEach(event=>{
-        console.log(event.full_name);
+        console.log(event.full_name.split('/')[1]);
     });
     
 }
