@@ -12,7 +12,7 @@ async function fetchUserGithubActivity(userName){
         }  
         const userInfo = await response.json();
 
-        //displayUserActivity(userInfo);
+        displayUserActivity(userInfo);
     }catch(error){
         console.error(error.message);
     }
@@ -27,14 +27,21 @@ async function fetchUserRepos(userName) {
             throw new Error(`Status: ${response.status}`);
         }
         const userRepos = await response.json();
-        displayUserActivity(userRepos);
+        displayUserRepos(userRepos);
     }catch(error){
         console.error(error.message);
     }
 }
+function displayUserActivity(userInfo){
+    //console.log(userInfo);
+    userInfo.forEach(events =>{
+        console.log(`Type: ${events.type}, Repo:${events.repo.name.split('/')[1]}`)
+    })
+}
 
-function displayUserActivity(userRepos){
-    //console.log(userRepos)
+
+function displayUserRepos(userRepos){
+    console.log("------User Repositories---------\n--------------------------------")
     userRepos.forEach(event=>{
         console.log(event.full_name.split('/')[1]);
     });
@@ -46,7 +53,7 @@ const userName = process.argv[2];
 if(!userName){
     console.log("Please enter a github user name");
 }else{
-    //fetchUserGithubActivity(userName);
+    fetchUserGithubActivity(userName);
     fetchUserRepos(userName);
 }
 
