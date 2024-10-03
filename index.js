@@ -34,9 +34,11 @@ async function fetchUserRepos(userName) {
 }
 function displayUserActivity(userInfo){
     //console.log(userInfo);
+    console.log("----------Recent Activites------------\n--------------------------------------");
     userInfo.forEach(events =>{
-        console.log(`Type: ${events.type}, Repo:${events.repo.name.split('/')[1]}`)
+        console.log(`Type: ${events.type},      Repo: ${events.repo.name.split('/')[1]},        Created: ${events.created_at}`)
     })
+    console.log("\n");
 }
 
 
