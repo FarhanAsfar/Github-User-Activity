@@ -1,7 +1,7 @@
 # Github-User-Activity
 Solution of [Github-User-Activity-CLI](https://roadmap.sh/projects/github-user-activity) from [roadmap.sh](roadmap.sh/)
 
-## Installation
+## How to Run
 
 - Clone the repository:
 ```bash
