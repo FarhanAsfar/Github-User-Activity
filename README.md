@@ -6,6 +6,9 @@ Solution of [Github-User-Activity-CLI](https://roadmap.sh/projects/github-user-a
 - Clone the repository:
 ```bash
 git clone https://github.com/FarhanAsfar/Github-User-Activity.git
+cd Github-User-Activity
+npm install
+npm link
 ```
 
 - Run the following command in your Terminal:
